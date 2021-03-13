@@ -1,0 +1,13 @@
+name: dio_extension
+description: .
+version: 2.0.0
+homepage: https://github.com/hsul4n/dart-extensions/packages/dio
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  dio: ^4.0.0-beta7
+
+dev_dependencies:
+  test: ^1.5.1

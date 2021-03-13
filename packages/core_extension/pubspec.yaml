@@ -1,0 +1,10 @@
+name: core_extension
+description: A simple useful extensions.
+version: 1.0.0
+homepage: https://github.com/hsul4n/dart-core_extension
+
+environment:
+  sdk: ">2.6.0 <3.0.0"
+
+dev_dependencies:
+  test: ^1.5.1

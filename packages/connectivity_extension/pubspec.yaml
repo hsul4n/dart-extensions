@@ -1,0 +1,13 @@
+name: connectivity_extension
+description: .
+version: 2.0.0
+homepage: https://github.com/hsul4n/dart-extensions/packages/connectivity
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  connectivity: ^3.0.2
+
+dev_dependencies:
+  test: ^1.5.1
