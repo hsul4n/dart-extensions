@@ -1,5 +1,5 @@
-extension IterableExtension<T> on Iterable<T> {
-  T get firstOrNull {
+extension IterableExtension<T> on Iterable<T?> {
+  T? get firstOrNull {
     try {
       return this.first;
     } catch (_) {
@@ -7,7 +7,7 @@ extension IterableExtension<T> on Iterable<T> {
     }
   }
 
-  T get lastOrNull {
+  T? get lastOrNull {
     try {
       return this.last;
     } catch (_) {
@@ -17,7 +17,7 @@ extension IterableExtension<T> on Iterable<T> {
 
   bool hasIndex(var index) => indexOrNull(index) != null;
 
-  T indexOrNull(final int index) {
+  T? indexOrNull(final int index) {
     try {
       return this.elementAt(index);
     } catch (e) {
@@ -25,7 +25,7 @@ extension IterableExtension<T> on Iterable<T> {
     }
   }
 
-  bool isExists(bool test(T element)) {
+  bool isExists(bool test(T? element)) {
     try {
       return this.find(test) != null;
     } catch (e) {
@@ -33,21 +33,21 @@ extension IterableExtension<T> on Iterable<T> {
     }
   }
 
-  T find(bool test(T element)) {
+  T? find(bool test(T? element)) {
     return this.firstWhere(test, orElse: () => null);
   }
 
-  List<dynamic> get flatten {
-    final flattened = List();
+  List<dynamic>? get flatten {
+    final flattened = [];
 
-    for (final item in this)
+    for (final T? item in this)
       item is List ? flattened.addAll(item.flatten) : flattened.add(item);
 
     return flattened;
   }
 
-  Map<K, List<T>> groupBy<K>(K Function(T) fn) => fold(
-      <K, List<T>>{},
-      (Map<K, List<T>> map, T element) =>
+  Map<K, List<T?>> groupBy<K>(K Function(T?) fn) => fold(
+      <K, List<T?>>{},
+      (Map<K, List<T?>> map, T? element) =>
           map..putIfAbsent(fn(element), () => <T>[]).add(element));
 }
