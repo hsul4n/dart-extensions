@@ -84,7 +84,7 @@ packages:
       name: dio
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.0-beta7"
+    version: "4.0.4"
   file:
     dependency: transitive
     description:
