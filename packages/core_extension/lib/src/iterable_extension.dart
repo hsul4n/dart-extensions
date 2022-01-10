@@ -37,7 +37,7 @@ extension IterableExtension<T> on Iterable<T?> {
     return this.firstWhere(test, orElse: () => null);
   }
 
-  List<dynamic>? get flatten {
+  Iterable<dynamic> get flatten {
     final flattened = [];
 
     for (final T? item in this)
