@@ -1,8 +1,8 @@
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 extension ConnectivityResultExtension on ConnectivityResult {
-  bool get isConnected => this != null && this != ConnectivityResult.none;
+  bool get isConnected => this != ConnectivityResult.none;
   bool get isOffline => !isConnected;
-  bool get isMobile => this != null && this == ConnectivityResult.mobile;
-  bool get isWifi => this != null && this == ConnectivityResult.wifi;
+  bool get isMobile => this == ConnectivityResult.mobile;
+  bool get isWifi => this == ConnectivityResult.wifi;
 }
